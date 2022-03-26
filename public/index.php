@@ -18,7 +18,7 @@
                 <div class="col col-lg-6 ">
                    
                         <div>
-                            <a href="cikis.php" class="btn btn-danger float-end">Oturumu Kapat</a>
+                            <a href="../action/logout.php" class="btn btn-danger float-end">Oturumu Kapat</a>
                         </div>
                     
                     <div class="fs-4 text text-center mt-5">GİRİŞ</div>
@@ -29,7 +29,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     <?php } ?>
-                    <form action="gelen.php" method="post">
+                    <form action="login" method="post">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -44,7 +44,8 @@
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
-                        <button type="submit" class="btn btn-primary float-end">Submit</button>
+                        <button type="submit" class="btn btn-success float-end">Submit</button>
+                        <a href="register" class="btn btn-primary text-light float-start">Üye Kayıt</a>
                     </form>
                 </div>
             </div>

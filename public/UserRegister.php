@@ -34,7 +34,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     <?php } ?>
-                    <form action="gelen.php" method="post">
+                    <form action="usersave" method="post">
                         <div class="mb-3">
                             <label for="exampleInputAdi" class="form-label">Adı </label>
                             <input type="text" name="adi" class="form-control" id="exampleInputAdi">

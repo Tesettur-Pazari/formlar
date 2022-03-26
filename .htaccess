@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_URI} !^/action/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /public/$1 [L]
+RewriteRule ^admin?$ /public/admin.php [L]
+RewriteRule ^register?$ /public/UserRegister.php [L]
+RewriteRule ^login?$ /action/login.php [L]
+RewriteRule ^logout?$ /action/logout.php [L]
+RewriteRule ^usersave?$ /action/UserSave.php [L]
+RewriteRule ^(/)?$ public/index.php [L]

@@ -4,10 +4,11 @@ namespace Tekin\model;
 
 use Tekin\getForm\mainForm;
 
+
 class uyeKayit extends mainForm
 {
-    private string $adi;
-    private string $soyadi;
+    private string $useradi;
+    private string $usersoyadi;
     private string $useremail;
     private string $userpass;
     private string $userrepass;
@@ -15,9 +16,9 @@ class uyeKayit extends mainForm
 
     public function save(): bool
     {
-        $query="INSERT INTO users (adi,soyadi,email,pass,job) VALUES (?,?,?,?,?)";
-        $sorgu = $this->db->prepare($query);
-        $ekle = $sorgu->execute([$this->adi, $this->soyadi, $this->useremail, $this->userpass, $this->job]);
+        $sql='INSERT INTO users (adi,soyadi,email,pass,job) values (?,?,?,?,?)';
+        $sorgu = $this->db->prepare($sql);
+        $ekle = $sorgu->execute([$this->useradi, $this->usersoyadi, $this->useremail, $this->userpass, $this->job]);
         return $ekle;
 
     }
@@ -41,35 +42,43 @@ class uyeKayit extends mainForm
     }
 
     /**
-     * @param string $adi
+     * @return string
      */
-    public function setAdi(string $adi): void
+    public function getUseradi(): string
     {
-        $this->adi = $adi;
+        return $this->useradi;
+    }
+
+    /**
+     * @param string $useradi
+     */
+    public function setUseradi(string $useradi): void
+    {
+        $this->useradi = $useradi;
     }
 
     /**
      * @return string
      */
-    public function getAdi(): string
+    public function getUsersoyadi(): string
     {
-        return $this->adi;
+        return $this->usersoyadi;
     }
 
     /**
-     * @param string $soyadi
+     * @param string $usersoyadi
      */
-    public function setSoyadi(string $soyadi): void
+    public function setUsersoyadi(string $usersoyadi): void
     {
-        $this->soyadi = $soyadi;
+        $this->usersoyadi = $usersoyadi;
     }
 
     /**
      * @return string
      */
-    public function getSoyadi(): string
+    public function getUseremail(): string
     {
-        return $this->soyadi;
+        return $this->useremail;
     }
 
     /**
@@ -83,13 +92,13 @@ class uyeKayit extends mainForm
     /**
      * @return string
      */
-    public function getUseremail(): string
+    public function getUserpass(): string
     {
-        return $this->useremail;
+        return $this->userpass;
     }
 
     /**
-     * @param int $userpass
+     * @param string $userpass
      */
     public function setUserpass(string $userpass): void
     {
@@ -99,17 +108,17 @@ class uyeKayit extends mainForm
     /**
      * @return string
      */
-    public function getUserpass(): string
+    public function getUserrepass(): string
     {
-        return $this->userpass;
+        return $this->userrepass;
     }
 
     /**
-     * @param string $job
+     * @param string $userrepass
      */
-    public function setJob(string $job): void
+    public function setUserrepass(string $userrepass): void
     {
-        $this->job = $job;
+        $this->userrepass = $userrepass;
     }
 
     /**
@@ -121,11 +130,11 @@ class uyeKayit extends mainForm
     }
 
     /**
-     * @param string $userrepass
+     * @param string $job
      */
-    public function setUserrepass(string $userrepass): void
+    public function setJob(string $job): void
     {
-        $this->userrepass = $userrepass;
+        $this->job = $job;
     }
 
 }
